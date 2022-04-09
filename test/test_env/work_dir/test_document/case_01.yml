@@ -1,0 +1,14 @@
+site_name: My Docs
+theme:
+  name: material
+plugins:
+  - mkdocs-glossary-plugin:
+      glossary_dirs: ["foo", "bar"]
+      replace_emphasized_text: True
+      replace_header: True
+      replace_table_header: True
+      replace_table_body: True
+  - macros:
+markdown_extensions:
+  - def_list
+use_directory_urls: false # becasue chrome doesn't support directory-url when opening index.html file.
