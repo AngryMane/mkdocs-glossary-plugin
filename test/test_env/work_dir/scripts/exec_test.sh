@@ -6,7 +6,6 @@ PYTHON_VERSIONS=(
 )
 
 PANDOC_VERSIONS=(
-  2.9
   2.11
   2.12
   2.13

@@ -15,6 +15,11 @@ In these cases, this plugin can ...
 - control the details, such as not converting words contained in h1 or emph, but converting words contained in plain text.
 - alias support. you can set alias for each word.
 
+# Requirements
+
+* python >= 3.7
+* pandoc >= 2.11
+* python pandoc(https://pypi.org/project/pandoc/)
 
 # How to install
 
