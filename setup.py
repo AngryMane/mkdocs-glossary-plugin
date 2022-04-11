@@ -1,11 +1,16 @@
 from setuptools import setup, find_packages
 from subprocess import run, CompletedProcess
+from os import path
+
+def read(fname):
+    return open(path.join(path.dirname(__file__), fname)).read()
 
 setup(
     name='mkdocs-glossary_plugin',
-    version='0.1.0',
-    description='A MkDocs plugin providing glossary',
-    long_description='',
+    version='0.1.1',
+    description='This plugin automatically turns specific words into links to specific pages.',
+    long_description_content_type="text/markdown",
+    long_description=read("README.md"),
     keywords='mkdocs',
     url='https://github.com/AngryMane/mkdocs-glossary-plugin',
     author='AngryMane',
@@ -18,14 +23,13 @@ setup(
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
+        'Environment :: Plugins',
+        'Topic :: Documentation',
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.7'
-        'Programming Language :: Python :: 3.8'
-        'Programming Language :: Python :: 3.9'
     ],
     packages=find_packages(),
     entry_points={
