@@ -9,8 +9,10 @@ try:
 except:
     RowHeadColumns = Any
 
+
 class RowHeadColumnsConverter(BaseConverter):
     def __init__(self: "RowHeadColumnsConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[RowHeadColumns] = RowHeadColumnsConverter()

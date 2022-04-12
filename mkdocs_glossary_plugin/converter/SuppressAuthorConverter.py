@@ -9,8 +9,10 @@ try:
 except:
     SuppressAuthor = Any
 
+
 class SuppressAuthorConverter(BaseConverter):
     def __init__(self: "SuppressAuthorConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[SuppressAuthor] = SuppressAuthorConverter()

@@ -9,8 +9,10 @@ try:
 except:
     Subscript = Any
 
+
 class SubscriptConverter(BaseConverter):
     def __init__(self: "SubscriptConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Subscript] = SubscriptConverter()

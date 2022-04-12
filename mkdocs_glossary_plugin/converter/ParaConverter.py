@@ -9,8 +9,10 @@ try:
 except:
     Para = Any
 
+
 class ParaConverter(BaseConverter):
     def __init__(self: "ParaConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Para] = ParaConverter()

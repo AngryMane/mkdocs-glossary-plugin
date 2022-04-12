@@ -9,8 +9,10 @@ try:
 except:
     DefaultStyle = Any
 
+
 class DefaultStyleConverter(BaseConverter):
     def __init__(self: "DefaultStyleConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[DefaultStyle] = DefaultStyleConverter()

@@ -9,8 +9,10 @@ try:
 except:
     NormalCitation = Any
 
+
 class NormalCitationConverter(BaseConverter):
     def __init__(self: "NormalCitationConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[NormalCitation] = NormalCitationConverter()

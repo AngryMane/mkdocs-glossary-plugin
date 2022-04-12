@@ -9,8 +9,10 @@ try:
 except:
     BlockQuote = Any
 
+
 class BlockQuoteConverter(BaseConverter):
     def __init__(self: "BlockQuoteConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[BlockQuote] = BlockQuoteConverter()

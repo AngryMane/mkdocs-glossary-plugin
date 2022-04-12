@@ -9,11 +9,19 @@ try:
 except:
     Strong = Any
 
+
 class StrongConverter(BaseConverter):
     def __init__(self: "StrongConverter") -> None:
         pass
 
-    def convert(self: "BuiltInTypeConverter", context: Context, target: Any) -> List[Any]:
-        return super().convert(context, target) if context.replace_emphasized_text else [target]
+    def convert(
+        self: "BuiltInTypeConverter", context: Context, target: Any
+    ) -> List[Any]:
+        return (
+            super().convert(context, target)
+            if context.replace_emphasized_text
+            else [target]
+        )
+
 
 CONVERTER_TABLE[Strong] = StrongConverter()

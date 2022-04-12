@@ -9,8 +9,10 @@ try:
 except:
     OrderedList = Any
 
+
 class OrderedListConverter(BaseConverter):
     def __init__(self: "OrderedListConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[OrderedList] = OrderedListConverter()

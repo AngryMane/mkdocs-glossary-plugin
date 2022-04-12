@@ -9,11 +9,13 @@ try:
 except:
     Code = Any
 
+
 class CodeConverter(BaseConverter):
     def __init__(self: "CodeConverter") -> None:
         pass
 
     def convert(self: "BaseConverter", context: Context, target: Code) -> List[Any]:
         return [target]
+
 
 CONVERTER_TABLE[Code] = CodeConverter()

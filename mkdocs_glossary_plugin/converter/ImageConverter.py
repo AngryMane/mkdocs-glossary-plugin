@@ -9,8 +9,10 @@ try:
 except:
     Image = Any
 
+
 class ImageConverter(BaseConverter):
     def __init__(self: "ImageConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Image] = ImageConverter()

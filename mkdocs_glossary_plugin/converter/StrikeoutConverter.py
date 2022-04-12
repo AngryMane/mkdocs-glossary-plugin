@@ -9,8 +9,10 @@ try:
 except:
     Strikeout = Any
 
+
 class StrikeoutConverter(BaseConverter):
     def __init__(self: "StrikeoutConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Strikeout] = StrikeoutConverter()

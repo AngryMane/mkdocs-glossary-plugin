@@ -9,8 +9,10 @@ try:
 except:
     ListAttributes = Any
 
+
 class ListAttributesConverter(BaseConverter):
     def __init__(self: "ListAttributesConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[ListAttributes] = ListAttributesConverter()

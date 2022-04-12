@@ -9,8 +9,10 @@ try:
 except:
     LineBreak = Any
 
+
 class LineBreakConverter(BaseConverter):
     def __init__(self: "LineBreakConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[LineBreak] = LineBreakConverter()

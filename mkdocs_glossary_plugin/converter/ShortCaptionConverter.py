@@ -9,8 +9,10 @@ try:
 except:
     ShortCaption = Any
 
+
 class ShortCaptionConverter(BaseConverter):
     def __init__(self: "ShortCaptionConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[ShortCaption] = ShortCaptionConverter()

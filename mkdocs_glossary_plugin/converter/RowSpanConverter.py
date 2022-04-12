@@ -9,8 +9,10 @@ try:
 except:
     RowSpan = Any
 
+
 class RowSpanConverter(BaseConverter):
     def __init__(self: "RowSpanConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[RowSpan] = RowSpanConverter()

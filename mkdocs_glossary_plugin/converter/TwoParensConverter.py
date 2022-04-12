@@ -9,8 +9,10 @@ try:
 except:
     TwoParens = Any
 
+
 class TwoParensConverter(BaseConverter):
     def __init__(self: "TwoParensConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[TwoParens] = TwoParensConverter()

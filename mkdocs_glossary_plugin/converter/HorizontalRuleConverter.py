@@ -9,8 +9,10 @@ try:
 except:
     HorizontalRule = Any
 
+
 class HorizontalRuleConverter(BaseConverter):
     def __init__(self: "HorizontalRuleConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[HorizontalRule] = HorizontalRuleConverter()

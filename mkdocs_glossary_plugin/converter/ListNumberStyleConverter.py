@@ -9,8 +9,10 @@ try:
 except:
     ListNumberStyle = Any
 
+
 class ListNumberStyleConverter(BaseConverter):
     def __init__(self: "ListNumberStyleConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[ListNumberStyle] = ListNumberStyleConverter()

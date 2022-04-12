@@ -9,8 +9,10 @@ try:
 except:
     MetaValue = Any
 
+
 class MetaValueConverter(BaseConverter):
     def __init__(self: "MetaValueConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[MetaValue] = MetaValueConverter()

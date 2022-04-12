@@ -9,6 +9,7 @@ try:
 except:
     RawBlock = Any
 
+
 class RawBlockConverter(BaseConverter):
     def __init__(self: "RawBlockConverter") -> None:
         pass
@@ -16,5 +17,6 @@ class RawBlockConverter(BaseConverter):
     def convert(self: "BaseConverter", context: Context, target: Any) -> List[Any]:
         # skip HTML block because of the processing speed
         return [target]
+
 
 CONVERTER_TABLE[RawBlock] = RawBlockConverter()

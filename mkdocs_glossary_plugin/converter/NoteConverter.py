@@ -9,8 +9,10 @@ try:
 except:
     Note = Any
 
+
 class NoteConverter(BaseConverter):
     def __init__(self: "NoteConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Note] = NoteConverter()

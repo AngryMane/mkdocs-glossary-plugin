@@ -9,8 +9,10 @@ try:
 except:
     Format = Any
 
+
 class FormatConverter(BaseConverter):
     def __init__(self: "FormatConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Format] = FormatConverter()

@@ -9,8 +9,10 @@ try:
 except:
     DefaultDelim = Any
 
+
 class DefaultDelimConverter(BaseConverter):
     def __init__(self: "DefaultDelimConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[DefaultDelim] = DefaultDelimConverter()

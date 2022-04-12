@@ -9,8 +9,10 @@ try:
 except:
     QuoteType = Any
 
+
 class QuoteTypeConverter(BaseConverter):
     def __init__(self: "QuoteTypeConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[QuoteType] = QuoteTypeConverter()
