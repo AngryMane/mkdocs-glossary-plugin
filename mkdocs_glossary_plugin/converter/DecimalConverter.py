@@ -9,8 +9,10 @@ try:
 except:
     Decimal = Any
 
+
 class DecimalConverter(BaseConverter):
     def __init__(self: "DecimalConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Decimal] = DecimalConverter()

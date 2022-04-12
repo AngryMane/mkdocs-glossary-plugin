@@ -9,11 +9,13 @@ try:
 except:
     Caption = Any
 
+
 class CaptionConverter(BaseConverter):
     def __init__(self: "CaptionConverter") -> None:
         pass
 
     def convert(self: "BaseConverter", context: Context, target: Caption) -> List[Any]:
         return [target]
+
 
 CONVERTER_TABLE[Caption] = CaptionConverter()

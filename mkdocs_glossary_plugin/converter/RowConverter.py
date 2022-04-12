@@ -9,8 +9,10 @@ try:
 except:
     Row = Any
 
+
 class RowConverter(BaseConverter):
     def __init__(self: "RowConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Row] = RowConverter()

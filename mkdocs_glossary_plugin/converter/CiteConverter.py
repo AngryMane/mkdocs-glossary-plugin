@@ -9,8 +9,10 @@ try:
 except:
     Cite = Any
 
+
 class CiteConverter(BaseConverter):
     def __init__(self: "CiteConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Cite] = CiteConverter()

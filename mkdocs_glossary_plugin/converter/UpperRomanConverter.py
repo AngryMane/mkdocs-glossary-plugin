@@ -9,8 +9,10 @@ try:
 except:
     UpperRoman = Any
 
+
 class UpperRomanConverter(BaseConverter):
     def __init__(self: "UpperRomanConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[UpperRoman] = UpperRomanConverter()

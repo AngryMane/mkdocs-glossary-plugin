@@ -9,8 +9,10 @@ try:
 except:
     AlignRight = Any
 
+
 class AlignRightConverter(BaseConverter):
     def __init__(self: "AlignRightConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[AlignRight] = AlignRightConverter()

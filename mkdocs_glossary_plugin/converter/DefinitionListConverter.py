@@ -9,8 +9,10 @@ try:
 except:
     DefinitionList = Any
 
+
 class DefinitionListConverter(BaseConverter):
     def __init__(self: "DefinitionListConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[DefinitionList] = DefinitionListConverter()

@@ -9,8 +9,10 @@ try:
 except:
     Superscript = Any
 
+
 class SuperscriptConverter(BaseConverter):
     def __init__(self: "SuperscriptConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Superscript] = SuperscriptConverter()

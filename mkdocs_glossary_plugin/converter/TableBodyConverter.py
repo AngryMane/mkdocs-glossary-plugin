@@ -9,11 +9,17 @@ try:
 except:
     TableBody = Any
 
+
 class TableBodyConverter(BaseConverter):
     def __init__(self: "TableBodyConverter") -> None:
         pass
 
-    def convert(self: "BaseConverter", context: Context, target: TableBody) -> List[Any]:
-        return super().convert(context, target) if context.replace_table_body else [target]
+    def convert(
+        self: "BaseConverter", context: Context, target: TableBody
+    ) -> List[Any]:
+        return (
+            super().convert(context, target) if context.replace_table_body else [target]
+        )
+
 
 CONVERTER_TABLE[TableBody] = TableBodyConverter()

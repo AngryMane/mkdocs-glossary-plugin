@@ -9,8 +9,10 @@ try:
 except:
     RawInline = Any
 
+
 class RawInlineConverter(BaseConverter):
     def __init__(self: "RawInlineConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[RawInline] = RawInlineConverter()

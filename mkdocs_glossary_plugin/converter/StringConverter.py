@@ -9,8 +9,10 @@ try:
 except:
     String = Any
 
+
 class StringConverter(BaseConverter):
     def __init__(self: "StringConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[String] = StringConverter()

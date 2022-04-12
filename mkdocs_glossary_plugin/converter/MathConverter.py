@@ -9,8 +9,10 @@ try:
 except:
     Math = Any
 
+
 class MathConverter(BaseConverter):
     def __init__(self: "MathConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Math] = MathConverter()

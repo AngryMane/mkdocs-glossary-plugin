@@ -9,6 +9,7 @@ try:
 except:
     Text = Any
 
+
 class TextConverter(BaseConverter):
     def __init__(self: "TextConverter") -> None:
         pass

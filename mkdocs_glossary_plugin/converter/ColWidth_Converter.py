@@ -9,8 +9,10 @@ try:
 except:
     ColWidth_ = Any
 
+
 class ColWidth_Converter(BaseConverter):
     def __init__(self: "ColWidth_Converter") -> None:
         pass
+
 
 CONVERTER_TABLE[ColWidth_] = ColWidth_Converter()

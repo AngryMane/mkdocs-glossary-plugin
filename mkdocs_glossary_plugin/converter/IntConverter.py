@@ -9,11 +9,15 @@ try:
 except:
     Int = Any
 
+
 class IntConverter(BaseConverter):
     def __init__(self: "IntConverter") -> None:
         pass
 
-    def convert(self: "PandocConverter", context: Context, target: List[Any]) -> List[Any]:
+    def convert(
+        self: "PandocConverter", context: Context, target: List[Any]
+    ) -> List[Any]:
         return [target]
+
 
 CONVERTER_TABLE[Int] = IntConverter()

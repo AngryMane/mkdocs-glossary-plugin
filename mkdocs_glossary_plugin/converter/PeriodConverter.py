@@ -9,8 +9,10 @@ try:
 except:
     Period = Any
 
+
 class PeriodConverter(BaseConverter):
     def __init__(self: "PeriodConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Period] = PeriodConverter()

@@ -9,8 +9,10 @@ try:
 except:
     SoftBreak = Any
 
+
 class SoftBreakConverter(BaseConverter):
     def __init__(self: "SoftBreakConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[SoftBreak] = SoftBreakConverter()

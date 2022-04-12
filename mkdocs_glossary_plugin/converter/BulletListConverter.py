@@ -9,8 +9,10 @@ try:
 except:
     BulletList = Any
 
+
 class BulletListConverter(BaseConverter):
     def __init__(self: "BulletListConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[BulletList] = BulletListConverter()

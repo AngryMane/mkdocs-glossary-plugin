@@ -9,8 +9,10 @@ try:
 except:
     DoubleQuote = Any
 
+
 class DoubleQuoteConverter(BaseConverter):
     def __init__(self: "DoubleQuoteConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[DoubleQuote] = DoubleQuoteConverter()

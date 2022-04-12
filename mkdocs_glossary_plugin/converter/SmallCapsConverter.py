@@ -9,8 +9,10 @@ try:
 except:
     SmallCaps = Any
 
+
 class SmallCapsConverter(BaseConverter):
     def __init__(self: "SmallCapsConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[SmallCaps] = SmallCapsConverter()

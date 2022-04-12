@@ -9,8 +9,10 @@ try:
 except:
     Div = Any
 
+
 class DivConverter(BaseConverter):
     def __init__(self: "DivConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Div] = DivConverter()

@@ -9,8 +9,10 @@ try:
 except:
     Null = Any
 
+
 class NullConverter(BaseConverter):
     def __init__(self: "NullConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Null] = NullConverter()

@@ -9,8 +9,10 @@ try:
 except:
     LineBlock = Any
 
+
 class LineBlockConverter(BaseConverter):
     def __init__(self: "LineBlockConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[LineBlock] = LineBlockConverter()

@@ -9,11 +9,13 @@ try:
 except:
     Link = Any
 
+
 class LinkConverter(BaseConverter):
     def __init__(self: "LinkConverter") -> None:
         pass
 
     def convert(self: "BaseConverter", context: Context, target: Link) -> List[Any]:
         return [target]
+
 
 CONVERTER_TABLE[Link] = LinkConverter()

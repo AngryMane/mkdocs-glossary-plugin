@@ -9,8 +9,10 @@ try:
 except:
     Plain = Any
 
+
 class PlainConverter(BaseConverter):
     def __init__(self: "PlainConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Plain] = PlainConverter()

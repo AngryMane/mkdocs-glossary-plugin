@@ -9,8 +9,10 @@ try:
 except:
     LowerRoman = Any
 
+
 class LowerRomanConverter(BaseConverter):
     def __init__(self: "LowerRomanConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[LowerRoman] = LowerRomanConverter()

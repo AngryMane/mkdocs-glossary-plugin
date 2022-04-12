@@ -9,8 +9,10 @@ try:
 except:
     MetaMap = Any
 
+
 class MetaMapConverter(BaseConverter):
     def __init__(self: "MetaMapConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[MetaMap] = MetaMapConverter()

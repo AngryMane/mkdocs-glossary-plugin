@@ -9,8 +9,10 @@ try:
 except:
     Underline = Any
 
+
 class UnderlineConverter(BaseConverter):
     def __init__(self: "UnderlineConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Underline] = UnderlineConverter()

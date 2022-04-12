@@ -9,8 +9,10 @@ try:
 except:
     Space = Any
 
+
 class SpaceConverter(BaseConverter):
     def __init__(self: "SpaceConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Space] = SpaceConverter()

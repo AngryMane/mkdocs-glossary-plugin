@@ -9,8 +9,10 @@ try:
 except:
     Pandoc = Any
 
+
 class PandocConverter(BaseConverter):
     def __init__(self: "PandocConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[Pandoc] = PandocConverter()

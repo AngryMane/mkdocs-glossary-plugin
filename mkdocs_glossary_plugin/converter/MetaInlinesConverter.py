@@ -9,8 +9,10 @@ try:
 except:
     MetaInlines = Any
 
+
 class MetaInlinesConverter(BaseConverter):
     def __init__(self: "MetaInlinesConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[MetaInlines] = MetaInlinesConverter()

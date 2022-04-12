@@ -9,8 +9,10 @@ try:
 except:
     LowerAlpha = Any
 
+
 class LowerAlphaConverter(BaseConverter):
     def __init__(self: "LowerAlphaConverter") -> None:
         pass
+
 
 CONVERTER_TABLE[LowerAlpha] = LowerAlphaConverter()
