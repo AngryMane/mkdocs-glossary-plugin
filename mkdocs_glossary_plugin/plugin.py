@@ -2,7 +2,7 @@ import os
 import sys
 import time
 
-from typing import List, Iterator, Any, Iterator
+from typing import List, Iterator, Any, Iterator, AnyStr, Tuple, Optional
 from timeit import default_timer as timer
 from datetime import datetime, timedelta
 
@@ -21,7 +21,7 @@ import markdown
 
 from .converter import *
 from .converter.BaseConverter import Word, Context
-from .converter.PandocConverter import PandocConverter
+from .converter.PandocConverter import PandocConverter  # type: ignore
 
 
 class Const:
@@ -33,7 +33,7 @@ class Const:
 
 class GlossaryPlugin(BasePlugin):
 
-    config_scheme = (
+    config_scheme: Tuple = (
         # Subscripted generics cannot be used with class and instance checks
         ("glossary_dirs", config_options.Type(List, required=True)),
         (
@@ -68,13 +68,13 @@ class GlossaryPlugin(BasePlugin):
     )
 
     def __init__(self: "GlossaryPlugin") -> None:
-        self.__glossary_dirs: List[str] = None
-        self.__input_format: str = None
-        self.__output_format: str = None
+        self.__glossary_dirs: List[str] = []
+        self.__input_format: str = ""
+        self.__output_format: str = ""
         self.__suffixes: List[str] = []
         self.__glossary: List[Word] = []
 
-        self.__docs_dir: str = None
+        self.__docs_dir: str = ""
 
     # Global Events
 
@@ -139,7 +139,7 @@ class GlossaryPlugin(BasePlugin):
             print(
                 f"[WARNING]`{invalid_word.name}` includes spaces, but we can't support it."
             )
-        self.__glossary_dirs = [x for x in self.__glossary if not " " in x.name]
+        self.__glossary = [x for x in self.__glossary if not " " in x.name]
 
         return files
 
@@ -210,11 +210,11 @@ class GlossaryPlugin(BasePlugin):
         : Markdown source text of page as string
 
         """
-        doc: Pandoc = pandoc.read(markdown, format=self.__input_format)
+        doc: Pandoc = pandoc.read(markdown, format=self.__input_format)  # type: ignore
 
         current_dir: str = os.path.dirname(self.__docs_dir + "/" + page.file.src_path)
-        converter: PandocConverter = PandocConverter()
-        doc = converter.convert(
+        converter: PandocConverter = PandocConverter()  # type: ignore
+        doc = converter.convert(  # type: ignore
             Context(self.config, self.__glossary, current_dir), doc
         )[0]
         markdown = pandoc.write(doc, format=self.__output_format)
@@ -238,7 +238,7 @@ class GlossaryPlugin(BasePlugin):
         result: List[Word] = []
         src_relative_path: str = self.__docs_dir + "/" + file.src_path
 
-        word_names: str = [file.name] + self.__extract_alias_names(file)
+        word_names: List[str] = [file.name] + self.__extract_alias_names(file)
         overlapped_word_names: List[str] = [
             x for x in word_names if x in [y.name for y in self.__glossary]
         ]
@@ -259,20 +259,20 @@ class GlossaryPlugin(BasePlugin):
         # We should use the python pandoc modulce to parse meta deta in each files,
         # but we use the markdown module to parse becuase the python pandoc modulce seems not to be able to parse yaml block meta data at the head of the file.
         # mkdocs also depends on the markdown module, so actually this reference doesn't add new dependency.
-        md = markdown.Markdown(extensions=["meta"])
+        md: markdown.core.Markdown = markdown.Markdown(extensions=["meta"])
         with open(file.abs_src_path, "r") as f:
-            data = f.read()
+            data: AnyStr = f.read()  # type: ignore
             md.convert(data)
         if (
-            not Const.GLOSSARY in md.Meta
-            or not md.Meta[Const.GLOSSARY]
-            or not md.Meta[Const.GLOSSARY][0]
+            not Const.GLOSSARY in md.Meta  # type: ignore
+            or not md.Meta[Const.GLOSSARY]  # type: ignore
+            or not md.Meta[Const.GLOSSARY][0]  # type: ignore
         ):
             return []
-        return md.Meta[Const.GLOSSARY]
+        return md.Meta[Const.GLOSSARY]  # type: ignore
 
     def __is_in_glossary_dirs(self: "GlossaryPlugin", file: File) -> bool:
-        matched_path: str = next(
+        matched_path: Optional[str] = next(
             filter(lambda x: x in file.abs_src_path, self.__glossary_dirs), None
         )
         return True if matched_path else False

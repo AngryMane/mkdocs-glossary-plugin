@@ -14,9 +14,7 @@ class EmphConverter(BaseConverter):
     def __init__(self: "EmphConverter") -> None:
         pass
 
-    def convert(
-        self: "BuiltInTypeConverter", context: Context, target: Any
-    ) -> List[Any]:
+    def convert(self: "EmphConverter", context: Context, target: Emph) -> List[Any]:
         return (
             super().convert(context, target)
             if context.replace_emphasized_text

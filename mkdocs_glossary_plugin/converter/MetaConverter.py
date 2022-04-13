@@ -14,7 +14,7 @@ class MetaConverter(BaseConverter):
     def __init__(self: "MetaConverter") -> None:
         pass
 
-    def convert(self: "StrConverter", context: Context, target: Str) -> List[Any]:
+    def convert(self: "MetaConverter", context: Context, target: Meta) -> List[Any]:
         return [target]
 
 

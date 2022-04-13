@@ -14,9 +14,7 @@ class IntConverter(BaseConverter):
     def __init__(self: "IntConverter") -> None:
         pass
 
-    def convert(
-        self: "PandocConverter", context: Context, target: List[Any]
-    ) -> List[Any]:
+    def convert(self: "IntConverter", context: Context, target: Int) -> List[Any]:
         return [target]
 
 

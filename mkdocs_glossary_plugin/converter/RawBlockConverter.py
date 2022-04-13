@@ -14,7 +14,7 @@ class RawBlockConverter(BaseConverter):
     def __init__(self: "RawBlockConverter") -> None:
         pass
 
-    def convert(self: "BaseConverter", context: Context, target: Any) -> List[Any]:
+    def convert(self: "BaseConverter", context: Context, target: RawBlock) -> List[Any]:
         # skip HTML block because of the processing speed
         return [target]
 

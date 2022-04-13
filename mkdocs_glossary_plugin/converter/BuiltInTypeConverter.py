@@ -25,9 +25,9 @@ class BuiltInTypeConverter(BaseConverter):
         return [target]
 
     def convert_list(
-        self: "PandocConverter", context: Context, target: List[Any]
+        self: "BuiltInTypeConverter", context: Context, target: List[Any]
     ) -> List[Any]:
-        converted_list = []
+        converted_list: List[Tuple[int, List[Any]]] = []
         for index, child in enumerate(target):
             converted = CONVERTER_TABLE[type(child)].convert(context, child)
             if len(converted) == 1 and child == converted[0]:
@@ -39,9 +39,9 @@ class BuiltInTypeConverter(BaseConverter):
         return [target]
 
     def convert_dict(
-        self: "PandocConverter", context: Context, target: Dict[Any, Any]
+        self: "BuiltInTypeConverter", context: Context, target: Dict[Any, Any]
     ) -> List[Any]:
-        converted_list = []
+        converted_list: List[Tuple[int, List[Any]]] = []
         for index, child in enumerate(target.items()):
             converted = CONVERTER_TABLE[type(child)].convert(context, child)
             if len(converted) == 1 and child == converted[0]:
@@ -53,17 +53,17 @@ class BuiltInTypeConverter(BaseConverter):
         return [target]
 
     def convert_tuple(
-        self: "PandocConverter", context: Context, target: Tuple[Any, Any]
+        self: "BuiltInTypeConverter", context: Context, target: Tuple[Any, ...]
     ) -> List[Any]:
-        converted_list = []
+        converted_list: List[Tuple[int, List[Any]]] = []
         for index, child in enumerate(target):
             converted = CONVERTER_TABLE[type(child)].convert(context, child)
             if len(converted) == 1 and child == converted[0]:
                 continue
             converted_list.append((index, converted))
         for child_index, converted in reversed(converted_list):
-            target[child_index] = converted[0]
-            target[child_index + 1 : child_index + 1] = converted[1:]
+            target[child_index] = converted[0]  # type: ignore
+            target[child_index + 1 : child_index + 1] = converted[1:]  # type: ignore
         return [target]
 
 

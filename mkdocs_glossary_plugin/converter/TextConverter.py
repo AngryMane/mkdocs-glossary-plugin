@@ -14,7 +14,7 @@ class TextConverter(BaseConverter):
     def __init__(self: "TextConverter") -> None:
         pass
 
-    def convert(self: "BaseConverter", context: Context, target: Any) -> List[Any]:
+    def convert(self: "BaseConverter", context: Context, target: Text) -> List[Any]:
         return [target]
 
 
