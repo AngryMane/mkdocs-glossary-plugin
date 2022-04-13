@@ -17,8 +17,8 @@ class TableHeadConverter(BaseConverter):
     def convert(
         self: "BaseConverter", context: Context, target: TableHead
     ) -> List[Any]:
-        return (
-            super().convert(context, target)
+        return (  # type: ignore
+            super().convert(context, target)  # type: ignore
             if context.replace_table_header
             else [target]
         )

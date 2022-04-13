@@ -17,7 +17,7 @@ class StrConverter(BaseConverter):
 
     def convert(self: "StrConverter", context: Context, target: Str) -> List[Any]:
         if context.enable_toc and "[TOC]" == target[0]:
-            return [RawInline(Format("html"), Text("[TOC]"))]
+            return [RawInline(Format("html"), Text("[TOC]"))]  # type: ignore
         result: List[Any] = self.__convert(context, target)
         return result if result else [target]
 
@@ -31,7 +31,7 @@ class StrConverter(BaseConverter):
             if start_index != 0:
                 result.extend(self.__convert(context, Str(target_str[0:start_index])))
             relative_path: str = os.path.relpath(word.source_path, context.current_dir)
-            result.append(Link(("", [], []), [Str(word.name)], (relative_path, "")))
+            result.append(Link(("", [], []), [Str(word.name)], (relative_path, "")))  # type: ignore
             if start_index + len(word.name) != len(target_str):
                 result.extend(
                     self.__convert(

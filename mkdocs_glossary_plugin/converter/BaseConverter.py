@@ -1,4 +1,4 @@
-from typing import Any, List, Dict
+from typing import Any, List, Dict, Tuple
 from collections import namedtuple
 
 from mkdocs.config import config_options, Config
@@ -27,7 +27,7 @@ class BaseConverter:
         pass
 
     def convert(self: "BaseConverter", context: Context, target: Any) -> List[Any]:
-        converted_list = []
+        converted_list: List[Tuple[int, List[Any]]] = []
         for child_index, child in enumerate(target):
             if child is None:
                 continue

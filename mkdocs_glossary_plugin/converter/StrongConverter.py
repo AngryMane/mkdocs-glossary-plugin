@@ -14,9 +14,7 @@ class StrongConverter(BaseConverter):
     def __init__(self: "StrongConverter") -> None:
         pass
 
-    def convert(
-        self: "BuiltInTypeConverter", context: Context, target: Any
-    ) -> List[Any]:
+    def convert(self: "StrongConverter", context: Context, target: Strong) -> List[Any]:
         return (
             super().convert(context, target)
             if context.replace_emphasized_text

@@ -14,8 +14,8 @@ class HeaderConverter(BaseConverter):
     def __init__(self: "HeaderConverter") -> None:
         pass
 
-    def convert(self: "BaseConverter", context: Context, target: Any) -> List[Any]:
-        return super().convert(context, target) if context.replace_header else [target]
+    def convert(self: "BaseConverter", context: Context, target: Header) -> List[Any]:
+        return super().convert(context, target) if context.replace_header else [target]  # type: ignore
 
 
 CONVERTER_TABLE[Header] = HeaderConverter()

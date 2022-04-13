@@ -17,8 +17,8 @@ class TableBodyConverter(BaseConverter):
     def convert(
         self: "BaseConverter", context: Context, target: TableBody
     ) -> List[Any]:
-        return (
-            super().convert(context, target) if context.replace_table_body else [target]
+        return (  # type: ignore
+            super().convert(context, target) if context.replace_table_body else [target]  # type: ignore
         )
 
 
