@@ -72,13 +72,14 @@ That's all! Now, all the `x_word`, `alias_word_a` and `alias_word_b` in your pro
 
 # Options
 
-| Name                    | Necessary | Type      | Default             | Detail                                                                                                                                                         |
-|-------------------------|-----------| ----------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name                    | Necessary | Type      | Default             | Detail   |
+|-------------------------|-----------| ----------|---------------------|-----------------------------------|
 | glossary_dirs           | required  | List[str] | None                | Specify the dirs containing the glossary md files. This plugin will only search for glossaries here. </br>**Please fill out with relative path from docs dir.**|
-| input_format            | optional  | str       | `markdown_phpextra` | The input format of the markdown file. See [pandoc](https://pandoc.org/MANUAL.html#general-options)                                                            |
-| output_format           | optional  | str       | `markdown_phpextra` | The output format of the markdown file. See [pandoc](https://pandoc.org/MANUAL.html#general-options)                                                           |
-| enable_toc              | optional  | bool      | True                | If True, you can use table of contents(\[TOC\]) feature.                                                                                                       |
-| replace_emphasized_text | optional  | bool      | True                | If True, emphaseized text includes specified word.                                                                                                             |
-| replace_header          | optional  | bool      | False               | If True, h1,h2,.. includes specified word.                                                                                                                     |
-| replace_table_header    | optional  | bool      | True                | If True, table header includes specified word.                                                                                                                 |
-| replace_table_body      | optional  | bool      | True                | If True, table body includes specified word.                                                                                                                   |
+| input_format            | optional  | str       | `markdown_phpextra` | The input format of the markdown file. See [pandoc](https://pandoc.org/MANUAL.html#general-options) |
+| output_format           | optional  | str       | `markdown_phpextra` | The output format of the markdown file. See [pandoc](https://pandoc.org/MANUAL.html#general-options)  |
+| is_case_sensitive       | optional  | bool      | True                | If True, this plugin is case-sensitive.   |
+| enable_toc              | optional  | bool      | True                | If True, you can use table of contents(\[TOC\]) feature.  |
+| replace_emphasized_text | optional  | bool      | True                | If True, emphaseized text includes specified word. |
+| replace_header          | optional  | bool      | False               | If True, h1,h2,.. includes specified word. |
+| replace_table_header    | optional  | bool      | True                | If True, table header includes specified word. |
+| replace_table_body      | optional  | bool      | True                | If True, table body includes specified word.  |

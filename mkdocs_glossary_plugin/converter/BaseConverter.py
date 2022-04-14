@@ -13,6 +13,7 @@ class Context:
         self.glossary: List[Word] = glossary
         self.current_dir: str = current_dir
 
+        self.is_case_sensitive: bool = config["is_case_sensitive"]
         self.enable_toc: bool = config["enable_toc"]
         self.replace_emphasized_text: bool = config["replace_emphasized_text"]
         self.replace_header: bool = config["replace_header"]
