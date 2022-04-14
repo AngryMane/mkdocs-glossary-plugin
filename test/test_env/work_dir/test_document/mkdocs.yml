@@ -4,6 +4,7 @@ theme:
 plugins:
   - mkdocs-glossary-plugin:
       glossary_dirs: ["foo", "bar"]
+      is_case_sensitive: False
       replace_emphasized_text: False
       replace_header: False
       replace_table_header: False

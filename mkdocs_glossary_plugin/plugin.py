@@ -60,6 +60,7 @@ class GlossaryPlugin(BasePlugin):
                 default="markdown_phpextra",
             ),
         ),
+        ("is_case_sensitive", config_options.Type(bool, default=True)),
         ("enable_toc", config_options.Type(bool, default=True)),
         ("replace_emphasized_text", config_options.Type(bool, default=True)),
         ("replace_header", config_options.Type(bool, default=False)),

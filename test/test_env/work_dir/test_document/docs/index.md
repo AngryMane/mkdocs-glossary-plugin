@@ -32,3 +32,11 @@ testalias_aalias_b
 # longest match
 
 test_alias
+
+# is_case_sensitive
+test
+Test
+TEST
+ALIas_a
+ALIas_b
+TESt_alias
