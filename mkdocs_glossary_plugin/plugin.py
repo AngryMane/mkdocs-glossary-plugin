@@ -211,6 +211,10 @@ class GlossaryPlugin(BasePlugin):
         : Markdown source text of page as string
 
         """
+        # TODO: This is work around for "Line break in codeblock does not work".
+        # https://github.com/AngryMane/mkdocs-glossary-plugin/issues/22
+        markdown = markdown.replace("```", "~~~")
+
         doc: Pandoc = pandoc.read(markdown, format=self.__input_format)  # type: ignore
 
         current_dir: str = os.path.dirname(self.__docs_dir + "/" + page.file.src_path)
