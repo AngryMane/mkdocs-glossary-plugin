@@ -14,5 +14,8 @@ class DoubleConverter(BaseConverter):
     def __init__(self: "DoubleConverter") -> None:
         pass
 
+    def convert(self: "DoubleConverter", context: Context, target: Double) -> List[Any]:
+        return [target]
+
 
 CONVERTER_TABLE[Double] = DoubleConverter()
