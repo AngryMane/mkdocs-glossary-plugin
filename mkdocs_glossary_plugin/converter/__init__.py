@@ -22,6 +22,7 @@ from . import ColSpanConverter
 from . import ColSpecConverter
 from . import ColWidthConverter
 from . import ColWidthDefaultConverter
+from . import ColWidth_Converter
 from . import DecimalConverter
 from . import DefaultDelimConverter
 from . import DefaultStyleConverter
