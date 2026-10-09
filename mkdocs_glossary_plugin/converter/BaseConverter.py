@@ -19,6 +19,7 @@ class Context:
         self.replace_header: bool = config["replace_header"]
         self.replace_table_header: bool = config["replace_table_header"]
         self.replace_table_body: bool = config["replace_table_body"]
+        self.replace_math_element: bool = config["replace_math_element"]
 
 
 class BaseConverter:

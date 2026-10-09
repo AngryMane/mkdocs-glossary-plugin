@@ -43,6 +43,7 @@ class GlossaryPlugin(BasePlugin):
                     "markdown",
                     "markdown_mmd",
                     "markdown_phpextra",
+                    "markdown_phpextra+tex_math_dollars",
                     "markdown_strict",
                 ],
                 default="markdown_phpextra",
@@ -55,6 +56,7 @@ class GlossaryPlugin(BasePlugin):
                     "markdown",
                     "markdown_mmd",
                     "markdown_phpextra",
+                    "markdown_phpextra+tex_math_dollars",
                     "markdown_strict",
                 ],
                 default="markdown_phpextra",
@@ -66,6 +68,7 @@ class GlossaryPlugin(BasePlugin):
         ("replace_header", config_options.Type(bool, default=False)),
         ("replace_table_header", config_options.Type(bool, default=True)),
         ("replace_table_body", config_options.Type(bool, default=True)),
+        ("replace_math_element", config_options.Type(bool, default=False)),
     )
 
     def __init__(self: "GlossaryPlugin") -> None:

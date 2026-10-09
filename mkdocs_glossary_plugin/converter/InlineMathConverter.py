@@ -14,5 +14,14 @@ class InlineMathConverter(BaseConverter):
     def __init__(self: "InlineMathConverter") -> None:
         pass
 
+    def convert(
+        self: "InlineMathConverter", context: Context, target: InlineMath
+    ) -> List[Any]:
+        return (
+            super().convert(context, target)
+            if context.replace_math_element
+            else [target]
+        )
+
 
 CONVERTER_TABLE[InlineMath] = InlineMathConverter()

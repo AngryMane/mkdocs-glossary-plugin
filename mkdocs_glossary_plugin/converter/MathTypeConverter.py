@@ -14,5 +14,14 @@ class MathTypeConverter(BaseConverter):
     def __init__(self: "MathTypeConverter") -> None:
         pass
 
+    def convert(
+        self: "MathTypeConverter", context: Context, target: MathType
+    ) -> List[Any]:
+        return (
+            super().convert(context, target)
+            if context.replace_math_element
+            else [target]
+        )
+
 
 CONVERTER_TABLE[MathType] = MathTypeConverter()

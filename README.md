@@ -83,3 +83,4 @@ That's all! Now, all the `x_word`, `alias_word_a` and `alias_word_b` in your pro
 | replace_header          | optional  | bool      | False               | If True, h1,h2,.. includes specified word. |
 | replace_table_header    | optional  | bool      | True                | If True, table header includes specified word. |
 | replace_table_body      | optional  | bool      | True                | If True, table body includes specified word.  |
+| replace_math_element    | optional  | bool      | False               | If True, math elements include specified word. |
